@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".fragments.add.AddFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="361dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_assignment_pink_24"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_et"
+            android:layout_width="307dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:ems="10"
+
+            android:hint="@string/title"
+            android:inputType="textPersonName"
+
+
+            android:textColorHint="#38000000"
+            app:hintTextColor="@color/colorAccent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_et_field"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="12dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/priorities_spinner"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:entries="@array/priorities"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <EditText
+        android:id="@+id/description_et"
+        android:layout_width="358dp"
+        android:layout_height="152dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        android:paddingStart="24dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorities_spinner"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <LinearLayout
+        android:id="@+id/timeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_et">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_baseline_timer_pink_24"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_et" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_et">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_outline_event_available_pink_24"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_et" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
