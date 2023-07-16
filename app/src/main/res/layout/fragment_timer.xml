@@ -7,69 +7,79 @@
     <data>
 
         <variable
-            name="eggTimerViewModel"
-            type="com.example.android.eggtimernotifications.ui.EggTimerViewModel" />
+            name="TimerViewModel"
+            type="com.example.todoapp.fragments.TimerViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.EggTimerFragment">
+        tools:context=".ui.EggTimerFragment"
+        android:background="@drawable/new8430">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="100dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:elapsedTime="@{eggTimerViewModel.elapsedTime}"
+            app:elapsedTime="@{TimerViewModel.elapsedTime}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.245"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/minutes_spinner" />
+            app:layout_constraintTop_toBottomOf="@id/minutes_spinner"
+            app:layout_constraintVertical_bias="0.555" />
 
         <Spinner
             android:id="@+id/minutes_spinner"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:background="@drawable/custom_input"
             android:entries="@array/egg_array"
-            android:onItemSelected="@{(parent, view, selection, id)-> eggTimerViewModel.setTimeSelected(selection)}"
+            android:onItemSelected="@{(parent, view, selection, id)-> TimerViewModel.setTimeSelected(selection)}"
             android:prompt="@string/egg_prompt"
-            android:selectedItemPosition="@{eggTimerViewModel.timeSelection}"
+            android:selectedItemPosition="@{TimerViewModel.timeSelection}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/on_off_switch"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.667" />
 
         <Switch
             android:id="@+id/on_off_switch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:checked="@{eggTimerViewModel.isAlarmOn}"
-            android:onCheckedChanged="@{(button, on)-> eggTimerViewModel.setAlarm(on)}"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/custom_input"
+            android:checked="@{TimerViewModel.isAlarmOn}"
+            android:onCheckedChanged="@{(button, on)-> TimerViewModel.setAlarm(on)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/minutes_spinner"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.667" />
 
         <ImageView
             android:id="@+id/egg_image"
-            android:layout_width="379dp"
-            android:layout_height="273dp"
+            android:layout_width="294dp"
+            android:layout_height="257dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:contentDescription="Egg"
             app:layout_constraintBottom_toTopOf="@id/minutes_spinner"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.92"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/reloj"
-            tools:srcCompat="@drawable/reloj" />
+            app:layout_constraintVertical_bias="0.279"
+            app:srcCompat="@drawable/br"
+            tools:srcCompat="@drawable/br" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

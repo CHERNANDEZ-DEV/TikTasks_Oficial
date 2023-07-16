@@ -56,7 +56,7 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDb() {
-        val mTitle = binding.titleEtField.text.toString()
+        val mTitle = binding.titleEt.text.toString()
         val mPriority = binding.prioritiesSpinner.selectedItem.toString()
         val mDescription = binding.descriptionEt.text.toString()
 

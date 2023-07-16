@@ -17,5 +17,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/my_nav" />
+        app:navGraph="@navigation/my_nav"
+        android:background="@drawable/new8430"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

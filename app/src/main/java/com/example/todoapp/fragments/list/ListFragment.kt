@@ -11,6 +11,7 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -89,6 +90,9 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
+        binding.timer.setOnClickListener{
+            findNavController().navigate(R.id.action_listFragment_to_timerFragment)
+        }
     }
 
     private fun setupRecyclerview() {
