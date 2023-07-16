@@ -55,7 +55,7 @@ class TimerFragment : Fragment() {
             notificationChannel.enableLights(true)
             notificationChannel.lightColor = Color.RED
             notificationChannel.enableVibration(true)
-            notificationChannel.description = "Time for breakfast"
+            notificationChannel.description = "Time for Study"
 
             val notificationManager = requireActivity().getSystemService(
                 NotificationManager::class.java

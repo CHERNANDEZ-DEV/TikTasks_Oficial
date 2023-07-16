@@ -5,18 +5,18 @@
 
     <!--Text values of cooking time intervals -->
     <string-array name="egg_array">
-        <item>Test only, better not use it for cooking :)</item>
-        <item>Soft Boiled</item>
-        <item>Slightly Firmer</item>
-        <item>Firm Yolk</item>
-        <item>Hard Boiled</item>
+        <item>It\'s Just a Test (10 seconds)</item>
+        <item>Study Stage, You Can Do It! (25 minutes)</item>
+        <item>Amazing, its Time To Take a Snack (5 minutes)</item>
+        <item>Go Out and Sunbathe (10 minutes)</item>
+        <item>Don\'t Worry, Almost Finish (20 minutes)</item>
     </string-array>
     <!--Cooking time intervals in minutes -->
     <integer-array name="minutes_array">
         <item>0</item>
-        <item>4</item>
-        <item>6</item>
+        <item>25</item>
+        <item>5</item>
         <item>10</item>
-        <item>12</item>
+        <item>20</item>
     </integer-array>
 </resources>

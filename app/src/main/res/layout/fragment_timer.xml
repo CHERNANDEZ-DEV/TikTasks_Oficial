@@ -21,15 +21,15 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="100dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="100dp"
             app:elapsedTime="@{TimerViewModel.elapsedTime}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.195"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/minutes_spinner"
-            app:layout_constraintVertical_bias="0.555" />
+            app:layout_constraintVertical_bias="0.45" />
 
         <Spinner
             android:id="@+id/minutes_spinner"
