@@ -35,16 +35,16 @@
             android:id="@+id/minutes_spinner"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/custom_input"
             android:entries="@array/egg_array"
             android:onItemSelected="@{(parent, view, selection, id)-> TimerViewModel.setTimeSelected(selection)}"
             android:prompt="@string/egg_prompt"
             android:selectedItemPosition="@{TimerViewModel.timeSelection}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/on_off_switch"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.667" />
@@ -53,16 +53,16 @@
             android:id="@+id/on_off_switch"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="196dp"
             android:background="@drawable/custom_input"
             android:checked="@{TimerViewModel.isAlarmOn}"
             android:onCheckedChanged="@{(button, on)-> TimerViewModel.setAlarm(on)}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/minutes_spinner"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.667" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minutes_spinner"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/egg_image"
@@ -71,7 +71,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:contentDescription="Egg"
             app:layout_constraintBottom_toTopOf="@id/minutes_spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.92"
@@ -79,7 +78,30 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.279"
             app:srcCompat="@drawable/br"
-            tools:srcCompat="@drawable/br" />
+            tools:srcCompat="@drawable/br"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Turn On/Off"
+            android:textStyle="italic"
+            android:textColor="#01A3E3"
+            app:layout_constraintStart_toEndOf="@+id/on_off_switch"
+            app:layout_constraintTop_toBottomOf="@+id/minutes_spinner" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/minutes_spinner"
+            app:layout_constraintTop_toTopOf="@+id/minutes_spinner"
+            app:srcCompat="@drawable/baseline_arrow_drop_down_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -98,9 +98,6 @@ class TimerViewModel(private val app: Application) : AndroidViewModel(app) {
         _timeSelection.value = timerLengthSelection
     }
 
-    /**
-     * Creates a new alarm, notification and timer
-     */
     private fun startTimer(timerLengthSelection: Int) {
         _alarmOn.value?.let {
             if (!it) {
@@ -111,7 +108,6 @@ class TimerViewModel(private val app: Application) : AndroidViewModel(app) {
                 }
                 val triggerTime = SystemClock.elapsedRealtime() + selectedInterval
 
-                // TODO: Step 1.5 get an instance of NotificationManager and call sendNotification
 
                 val notificationManager = ContextCompat.getSystemService(
                     app,
@@ -119,7 +115,6 @@ class TimerViewModel(private val app: Application) : AndroidViewModel(app) {
                 ) as NotificationManager
                 notificationManager.sendNotification(app.getString(R.string.timer_running), app)
 
-                // TODO: Step 1.15 call cancel notification
 
                 notificationManager.cancelNotifications()
 
@@ -138,9 +133,6 @@ class TimerViewModel(private val app: Application) : AndroidViewModel(app) {
         createTimer()
     }
 
-    /**
-     * Creates a new timer
-     */
     private fun createTimer() {
         viewModelScope.launch {
             val triggerTime = loadTime()
@@ -160,17 +152,11 @@ class TimerViewModel(private val app: Application) : AndroidViewModel(app) {
         }
     }
 
-    /**
-     * Cancels the alarm, notification and resets the timer
-     */
     private fun cancelNotification() {
         resetTimer()
         alarmManager.cancel(notifyPendingIntent)
     }
 
-    /**
-     * Resets the timer on screen and sets alarm value false
-     */
     private fun resetTimer() {
         timer.cancel()
         _elapsedTime.value = 0
